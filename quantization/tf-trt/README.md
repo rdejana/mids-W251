@@ -10,8 +10,20 @@ Assuming you've checked out this repository on your NX, head to the subdirectory
 
 Once the image is built, you can run the command `docker run -it --rm --net=host tf-trt-demo`.  Once the container is running, you'll see output similar to:
 ```
-output...
+[I 21:26:42.668 NotebookApp] Writing notebook server cookie secret to /root/.local/share/jupyter/runtime/notebook_cookie_secret
+[I 21:26:43.631 NotebookApp] Serving notebooks from local directory: /app/tf-trt
+[I 21:26:43.631 NotebookApp] Jupyter Notebook 6.1.6 is running at:
+[I 21:26:43.631 NotebookApp] http://nx:8888/?token=af4be11ce363992a3815f1893de5b4f219940a7fb364040a
+[I 21:26:43.631 NotebookApp]  or http://127.0.0.1:8888/?token=af4be11ce363992a3815f1893de5b4f219940a7fb364040a
+[I 21:26:43.631 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 21:26:43.647 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///root/.local/share/jupyter/runtime/nbserver-1-open.html
+    Or copy and paste one of these URLs:
+        http://nx:8888/?token=af4be11ce363992a3815f1893de5b4f219940a7fb364040a
+     or http://127.0.0.1:8888/?token=af4be11ce363992a3815f1893de5b4f219940a7fb364040a
 ```
-
+Navigate to the appropriate URL and open the file `tf-trt.ipynb`. 
 
 
