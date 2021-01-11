@@ -4,22 +4,14 @@ This is a very simple image classification example based on https://github.com/t
 
 
 ## Docker
-TBD
+This demo is made available as via a Dockerfile.  The image built from this demo leverages Nvidia's TensorFlow 2.x build (see https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html ) and requires an update to Protobuf.  There appears to be an issue with the python implementation protobuf (see https://jkjung-avt.github.io/tf-trt-revisited).  The current workaround is to build and install a C++ based implemenation. The script install_protobuf-3.13.0.sh will download, build, and install protobuf 3.13.0
 
-## Running directly
-This assumes you are running on Jetpack 4.4.x.  You'll want to make sure TensorFlow 2.x is installed on the NX; see https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html for details.
+Assuming you've checked out this repository on your NX, head to the subdirectory `quantization/tf-trt`.  From This directory, run the command `docker build -t tf-trt-demo .`.  This will take a bit of time to build.
 
-### Protobuf
-There appears to be an issue with the python implementation protobuf (see https://jkjung-avt.github.io/tf-trt-revisited).  The current workaround is to build and install a C++ based implemenation. The script install_protobuf-3.13.0.sh will download, build, and install protobuf 3.13.0.  If a later version is needed, the script can be easily updated.  Run the script with the command:
+Once the image is built, you can run the command `docker run -it --rm --net=host tf-trt-demo`.  Once the container is running, you'll see output similar to:
 ```
-sh install_protobuf-3.13.0.sh
+output...
 ```
-The script will take some time to complete.  
 
-Now you'll need to run the following commands
-```
-sudo cp -R /usr/local/lib/python3.6/dist-packages/protobuf-3.13.0-py3.6-linux-aarch64.egg/google/protobuf /usr/local/lib/python3.6/dist-packages/google/
-```
-Note, if you get an error regarding google.buff, e.g. `No module named 'google.protobuf` rerun the command above.
 
-Once done, reboot your NX.
+
