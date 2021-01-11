@@ -323,7 +323,7 @@ CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--al
 # This runs jup lab
 #CMD ["jupyter", "lab", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
 ```
-This file is located in this repository under the directory `docker`.
+This file is located in this repository under the directory `docker/docker`.
 
 The `FROM` tells Docker which base image we are using.  In this case, you are using the ubuntu 18.04 base image.
 
