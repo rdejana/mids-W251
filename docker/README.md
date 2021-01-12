@@ -473,7 +473,8 @@ You've now used your Nvidia GPU with Tensor from a container!  Other images form
 # NX and Kuberenetes
 
 ## Part 1: Install and verify Kubernetes
-This is based on https://thenewstack.io/tutorial-deploying-tensorflow-models-at-the-edge-with-nvidia-jetson-nano-and-k3s/.
+In this demo, we'll expore installing Kubernetes on Jetson Xavier NX and then deploying a simple application.  
+We'll be using an approach based on https://thenewstack.io/tutorial-deploying-tensorflow-models-at-the-edge-with-nvidia-jetson-nano-and-k3s/ and using a version of Kubernetes called K3s, a distribution focused a lightweight Kubernetes designed for the Edge.  
 
 You'll first want to make sure that the default runtime for Docker is set to nvidia.  Confirm that the file `/etc/docker/daemon.json` looks like:
 ```
@@ -489,12 +490,21 @@ You'll first want to make sure that the default runtime for Docker is set to nvi
 }
 
 ```
-You are going to use a slimmed down Kubernetes called K3s.  
-Runn the following:
+
+If changes are needed, you'll need either reboot your NX or restart the docker service.
+```
+sudo systemctl restart docker
+```
+
+
+To install K3s, run the following: 
 ```
 mkdir $HOME/.kube/
 curl -sfL https://get.k3s.io | sh -s - --docker --write-kubeconfig-mode 644 --write-kubeconfig $HOME/.kube/config
 ```
+
+This installs k3s and has it use a Docker instead of containerd.
+
 After a few minutes, you'll have Kubernetes up and running.
 ```
 kubectl get nodes
