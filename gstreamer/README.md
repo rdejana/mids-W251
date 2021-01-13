@@ -8,7 +8,7 @@ Note, on Jetson devices the `automatic video sink`, `autovideosink` is mapped to
 
 
 ## VNC
-This demo may be used via VNC.  If VNC is used, it is strongly recommended to us a reslution less than 4k as resolutions at 4k or higher can cause additional lag when VNC is used.
+This demo may be used via VNC.  If VNC is used, it is strongly recommended to us a reslution less than 4k as resolutions at 4k or higher can cause additional lag when VNC is used.  For example, I typically set my resolution to `1600x900` via the command `sudo xrandr --fb 1600x900`.
 
 
 ## Part 1: 
